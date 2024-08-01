@@ -1,0 +1,28 @@
+<div class="container mt-3 mb-3">
+  <div class="row">
+    <div
+      *ngFor="let wizard of wizards$ | async"
+      class="col-md-4 d-flex align-items-center"
+    >
+      <div class="card mb-4">
+        <img
+          src="{{ wizard.image }}"
+          class="card-img-top mx-auto d-block"
+          alt="{{ wizard.name }}"
+          style="max-width: 200px; height: auto"
+        />
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ wizard.name }}</h5>
+          <p class="card-text">
+            <strong>Maison :</strong> {{ wizard.house }}<br />
+            <strong>Baguette :</strong> {{ wizard.wand.wood }} avec un cœur de
+            {{ wizard.wand.core }} ({{ wizard.wand.length }} cm)<br />
+            <strong>Patronus :</strong> {{ wizard.patronus }}<br />
+            <strong>Date de naissance:</strong> {{ wizard.dateOfBirth }}<br />
+            <strong>Acteur:</strong> {{ wizard.actor }}<br />
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
